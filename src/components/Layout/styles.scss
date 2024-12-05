@@ -1,0 +1,49 @@
+.layoutContainer {
+    background-color: gray;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: green;
+    height: 80px;
+    width: 100%;
+}
+
+.body {
+    display: flex;
+    flex: 1;
+    position: relative; // Ensure positioning context for the sidebar
+}
+
+.sidebar {
+    background-color: white;
+    height: 100%;
+    width: 20%;
+    position: absolute; // Position the sidebar absolutely
+    left: -100%; // Initially hide the sidebar off-canvas
+    transition: left 0.3s ease; // Smooth transition for opening/closing
+}
+
+.sidebar.open {
+    left: 0; // Move the sidebar into view when open
+}
+
+.mainContent {
+    background-color: rgb(155, 7, 7);
+    height: 100%;
+    width: 100%; // Full width when sidebar is off-canvas
+    transition: margin-left 0.3s ease; // Smooth transition for content shift
+}
+
+.mainContent.shifted {
+    margin-left: 20%; // Shift content when sidebar is open
+}
+
+.footer {
+    background-color: aqua;
+    min-height: 50px;
+    width: 100%;
+}
